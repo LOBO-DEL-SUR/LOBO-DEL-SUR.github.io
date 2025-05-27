@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Museo Virtual - Lobos del Sur</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial Black', sans-serif;
+      background: #111;
+      color: white;
+    }
+
+    /* Portada con animación */
+    header {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      overflow: hidden;
+    }
+
+    header img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.8);
+      animation: fadeIn 2s ease forwards;
+    }
+
+    header .texto-portada {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      text-align: center;
+      transform: translateY(-50%);
+      color: white;
+      text-shadow: 2px 2px 8px red;
+    }
+
+    header .texto-portada h1 {
+      font-size: 3.5rem;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+
+    header .texto-portada p {
+      font-size: 1.3rem;
+      margin: 10px 0 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 30px;
+      gap: 20px;
+      background-color: #1a1a1a;
+    }
+
+    .galeria img {
+      width: 220px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      border: 2px solid #ff0000;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px red;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.95);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 4px solid red;
+      border-radius: 15px;
+    }
+
+    .modal:target {
+      display: flex;
+    }
+
+    @media (max-width: 600px) {
+      header .texto-portada h1 {
+        font-size: 2rem;
+      }
+      .galeria img {
+        width: 90%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Portada -->
+  <header>
+    <img src="images/portada.jpeg" alt="Lobos del Sur">
+    <div class="texto-portada">
+      <h1>Lobos del Sur</h1>
+      <p>Museo Virtual - Galería Oficial</p>
+    </div>
+  </header>
+
+  <!-- Galería -->
+  <section class="galeria">
+    <a href="#img1"><img src="images/1.jpeg" alt="Imagen 1"></a>
+    <a href="#img2"><img src="images/2.jpeg" alt="Imagen 2"></a>
+    <a href="#img3"><img src="images/3.jpeg" alt="Imagen 3"></a>
+    <a href="#img4"><img src="images/4.jpeg" alt="Imagen 4"></a>
+    <a href="#img5"><img src="images/5.jpeg" alt="Imagen 5"></a>
+    <a href="#img6"><img src="images/6.jpeg" alt="Imagen 6"></a>
+    <a href="#img7"><img src="images/7.jpeg" alt="Imagen 7"></a>
+    <a href="#img8"><img src="images/8.jpeg" alt="Imagen 8"></a>
+    <a href="#img9"><img src="images/9.jpeg" alt="Imagen 9"></a>
+    <a href="#img10"><img src="images/10.jpeg" alt="Imagen 10"></a>
+  </section>
+
+  <!-- Modales -->
+  <div id="img1" class="modal"><a href="#"><img src="images/1.jpeg" alt=""></a></div>
+  <div id="img2" class="modal"><a href="#"><img src="images/2.jpeg" alt=""></a></div>
+  <div id="img3" class="modal"><a href="#"><img src="images/3.jpeg" alt=""></a></div>
+  <div id="img4" class="modal"><a href="#"><img src="images/4.jpeg" alt=""></a></div>
+  <div id="img5" class="modal"><a href="#"><img src="images/5.jpeg" alt=""></a></div>
+  <div id="img6" class="modal"><a href="#"><img src="images/6.jpeg" alt=""></a></div>
+  <div id="img7" class="modal"><a href="#"><img src="images/7.jpeg" alt=""></a></div>
+  <div id="img8" class="modal"><a href="#"><img src="images/8.jpeg" alt=""></a></div>
+  <div id="img9" class="modal"><a href="#"><img src="images/9.jpeg" alt=""></a></div>
+  <div id="img10" class="modal"><a href="#"><img src="images/10.jpeg" alt=""></a></div>
+
+</body>
+</html>

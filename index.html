@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TAXIS LOBOS DEL SUR</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    :root {
+      --amarillo: #ffc107;
+      --negro: #111;
+      --gris-claro: #f5f5f5;
+      --verde-whatsapp: #25D366;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--gris-claro);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    nav {
+      background-color: var(--negro);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      font-size: 1rem;
+      padding-bottom: 5px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--amarillo);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    header {
+      background-color: var(--amarillo);
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .header-content img {
+      width: 80px;
+      height: auto;
+    }
+
+    .header-content h1 {
+      font-size: 2.8em;
+      color: #222;
+      margin: 0;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                  url('https://images.unsplash.com/photo-1589561253899-54a00f1d6f86?auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+      background-size: cover;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .hero h2:hover {
+      transform: scale(1.05);
+    }
+
+    .hero p {
+      font-size: 1.2em;
+    }
+
+    .section, .services, .reviews {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: white;
+      margin: 20px auto;
+      max-width: 1000px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .section h3, .services h3, .reviews h3 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: var(--negro);
+    }
+
+    .review-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 0 10px;
+    }
+
+    .review {
+      background-color: #f9f9f9;
+      border-left: 5px solid var(--amarillo);
+      padding: 20px;
+      border-radius: 8px;
+      font-style: italic;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .review:hover {
+      transform: translateY(-5px);
+    }
+
+    .review h4 {
+      margin-top: 10px;
+      font-size: 1rem;
+      font-style: normal;
+      color: #555;
+    }
+
+    footer {
+      background-color: var(--negro);
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 40px;
+    }
+
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--verde-whatsapp);
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      font-size: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .whatsapp-button:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 2em;
+      }
+
+      nav a {
+        margin: 0 10px;
+        font-size: 0.9rem;
+      }
+
+      .header-content {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header data-aos="fade-down">
+  <div class="header-content">
+    <img src="logo principal.jpeg" alt="Logo Lobos del Sur" data-aos="zoom-in">
+    <h1>TAXIS LOBOS DEL SUR</h1>
+  </div>
+</header>
+
+<nav>
+  <a href="#servicios">Servicios</a>
+  <a href="#reseñas">Reseñas</a>
+  <a href="#contacto">Contacto</a>
+  <a href="museo.html">Museo</a>
+</nav>
+
+<section class="hero" data-aos="zoom-in">
+  <h2>¡Tu viaje comienza con nosotros!</h2>
+  <p>Servicio rápido, seguro y disponible las 24 horas</p>
+</section>
+
+<section class="section" id="servicios" data-aos="fade-up">
+  <h3>¿Qué ofrecemos?</h3>
+  <p>✔ Traslados al aeropuerto</p>
+  <p>✔ Servicio ejecutivo y familiar</p>
+  <p>✔ Disponibilidad 24/7</p>
+  <p>✔ Conductores profesionales y vehículos limpios</p>
+  <p>✔ Contamos con viajes foráneos y locales</p>
+</section>
+
+<section class="reviews" id="reseñas" data-aos="fade-up">
+  <h3>Lo que opinan nuestros clientes</h3>
+  <div class="review-list">
+    <div class="review">
+      <p>“Excelente servicio, muy puntual y el conductor muy amable.”</p>
+      <h4>— María G.</h4>
+    </div>
+    <div class="review">
+      <p>“Viajé al aeropuerto sin contratiempos. 100% recomendable.”</p>
+      <h4>— Carlos R.</h4>
+    </div>
+    <div class="review">
+      <p>“La unidad estaba limpia y el precio justo. ¡Gracias!”</p>
+      <h4>— Ana L.</h4>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="contacto" data-aos="fade-up">
+  <h3>Contáctanos</h3>
+  <p>Teléfono: <strong>+52 123 456 7890</strong></p>
+  <p>WhatsApp: <strong>+52 123 456 7890</strong></p>
+  <p>Correo: <strong>contacto@taxirapido.com</strong></p>
+</section>
+
+<footer data-aos="fade-up">
+  <p>&copy; 2025 Taxi Rápido. Todos los derechos reservados.</p>
+</footer>
+
+<a class="whatsapp-button" href="https://wa.me/521234567890" target="_blank" title="Chatea por WhatsApp">
+  💬
+</a>
+
+<!-- AOS Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+
+</body>
+</html>
