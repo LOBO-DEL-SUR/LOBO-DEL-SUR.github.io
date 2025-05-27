@@ -1,4 +1,3 @@
-<style> 
   :root {
     --amarillo: #ffc107;
     --negro: #111;
@@ -239,35 +238,6 @@
     .header-content .logo {
       width: 80px;
       margin-bottom: 5px;
-    }
-  }
-
-  /* MUSEO VIRTUAL: Galería adaptable */
-  .museo {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    margin-top: 30px;
-    padding: 10px;
-  }
-
-  .museo-img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  /* Ajustes para pantallas pequeñas */
-  @media (max-width: 600px) {
-    .museo {
-      grid-template-columns: repeat(2, 1fr); /* Fuerza dos columnas en móviles */
-    }
-
-    .museo-img {
-      max-height: 180px; /* Ajusta el alto si es necesario */
-      object-fit: cover;
     }
   }
 </style>
